@@ -24,21 +24,17 @@ def get_weather(city):
         response = requests.get(BASE_URL, params=params)
 
         # Task 2 — Handle errors properly
-        if response.status_code == 200:
-            data = response.json()
-            return data
+       if response.status_code == 200:
+    return response.json()
 
-        elif response.status_code == 401:
-            print("Error: Invalid API key.")
-        
-        elif response.status_code == 429:
-            print("Error: Rate limit exceeded. Please try again later.")
-        
-        else:
-            print(f"Error: API request failed with status code {response.status_code}")
+elif response.status_code == 429:
+    return {"error": "Rate limit exceeded. Try again later."}
 
-    except requests.exceptions.RequestException as e:
-        print("Request failed:", e)
+elif response.status_code == 401:
+    return {"error": "Invalid API key."}
+
+else:
+    return {"error": f"Unexpected error: {response.status_code}"}
 
 
 if __name__ == "__main__":

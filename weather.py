@@ -47,7 +47,10 @@ if __name__ == "__main__":
 
     weather = get_weather(city)
 
-    if "main" in result and "temp" in result["main"]:
-    print("Temperature:", result["main"]["temp"])
+    if "error" in result:
+    print(result["error"])
+elif "main" in result and "temp" in result["main"]:
+    print("Temperature:", result["main"]["temp"], "°C")
+    print("Weather:", result["weather"][0]["description"])
 else:
-    print("Weather data unavailable")
+    print("Unexpected response format.")

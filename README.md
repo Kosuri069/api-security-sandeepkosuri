@@ -1,3 +1,4 @@
 # api-security-sandeepkosuri
-Exposing an API key on GitHub can lead to unauthorized usage, financial charges, and service abuse. Attackers may exploit the key or resell access.
-Logging city names is prohibited because location data can be sensitive and tied to individuals. Privacy laws like GDPR require data minimization and protection of personally identifiable information.
+Exposing an API key on GitHub can allow attackers to misuse the service, leading to financial loss, quota exhaustion, and service disruption.
+
+Logging city names is prohibited because location data can be sensitive and linked to individuals. Privacy regulations like GDPR enforce data minimization, meaning only necessary data should be processed or stored.

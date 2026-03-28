@@ -33,6 +33,9 @@ elif response.status_code == 429:
 elif response.status_code == 401:
     return {"error": "Invalid API key."}
 
+elif response.status_code == 404:
+    return {"error": "City not found"}
+
 else:
     return {"error": f"Unexpected error: {response.status_code}"}
 

@@ -47,6 +47,7 @@ if __name__ == "__main__":
 
     weather = get_weather(city)
 
-    if weather:
-        print("Temperature:", weather["main"]["temp"], "°C")
-        print("Weather:", weather["weather"][0]["description"])
+    if "main" in result and "temp" in result["main"]:
+    print("Temperature:", result["main"]["temp"])
+else:
+    print("Weather data unavailable")
